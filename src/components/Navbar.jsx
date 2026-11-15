@@ -61,19 +61,16 @@ export default function Navbar({ activeTab = "home", onSelectTab }) {
         <div className="container header-top-inner">
           {/* Left: Host Institution (UEM Jaipur) Logo */}
           <div className="header-top-col header-top-left">
-            <a
-              href="https://uem.edu.in/uem-jaipur/"
-              target="_blank"
-              rel="noopener noreferrer"
+            <div
               aria-label="University of Engineering & Management (UEM) Jaipur"
-              className="header-provided-logo-link"
+              className="header-provided-logo-item"
             >
               <img
                 src="/images/uem-logo.jpg"
                 alt="University of Engineering & Management (UEM) Jaipur"
                 className="header-top-provided-logo header-top-uem-logo"
               />
-            </a>
+            </div>
           </div>
 
           {/* Middle: AI UNIVERSE Logo & Conference Title */}
@@ -101,32 +98,26 @@ export default function Navbar({ activeTab = "home", onSelectTab }) {
 
           {/* Right: IEEE Computer Society Logo & IEEE UEMJ Student Branch Logo */}
           <div className="header-top-col header-top-right">
-            <a
-              href="https://www.computer.org"
-              target="_blank"
-              rel="noopener noreferrer"
+            <div
               aria-label="IEEE Computer Society UEMJ Student Branch Chapter"
-              className="header-provided-logo-link"
+              className="header-provided-logo-item"
             >
               <img
                 src="/images/ieee-cs-uemj-logo.png"
                 alt="IEEE Computer Society UEMJ Student Branch Chapter"
                 className="header-top-provided-logo header-top-cs-logo"
               />
-            </a>
-            <a
-              href="https://www.ieee.org"
-              target="_blank"
-              rel="noopener noreferrer"
+            </div>
+            <div
               aria-label="IEEE UEMJ Student Branch"
-              className="header-provided-logo-link"
+              className="header-provided-logo-item"
             >
               <img
                 src="/images/ieee-uemj-student-branch.png"
                 alt="IEEE UEMJ Student Branch"
                 className="header-top-provided-logo header-top-uemj-sb-logo"
               />
-            </a>
+            </div>
           </div>
         </div>
       </div>

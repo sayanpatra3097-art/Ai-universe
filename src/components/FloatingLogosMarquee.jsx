@@ -1,5 +1,5 @@
 import React from "react";
-import { ExternalLink, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 export const FLOATING_LOGOS = [
   {
@@ -89,13 +89,10 @@ export default function FloatingLogosMarquee() {
 
         <div className="floating-marquee-track">
           {marqueeItems.map((item, index) => (
-            <a
+            <div
               key={`${item.id}-${index}`}
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
               className="floating-logo-card"
-              title={`Visit ${item.name}`}
+              title={item.name}
             >
               <div className="floating-logo-img-box">
                 <img
@@ -115,11 +112,8 @@ export default function FloatingLogosMarquee() {
                 <span className={`floating-logo-badge badge-${item.badgeType}`}>
                   {item.role}
                 </span>
-                <span className="floating-logo-ext-hint" aria-hidden="true">
-                  <ExternalLink size={11} />
-                </span>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>

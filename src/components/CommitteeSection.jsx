@@ -1,46 +1,163 @@
-import { motion } from "framer-motion";
-import { Users, ShieldCheck, ArrowRight } from "lucide-react";
-import { committeeStructure } from "../data/conference";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Users,
+  User,
+  Building2,
+  Award,
+  Sparkles,
+  ShieldCheck,
+  Camera
+} from "lucide-react";
+import { committeeMembers, committeeCategories } from "../data/conference";
 import SectionHeading from "./SectionHeading";
 
-export default function CommitteeSection() {
+function CommitteeMemberCard({ member, index }) {
+  const [imgFailed, setImgFailed] = useState(false);
+
   return (
-    <section className="section" id="committee">
+    <motion.article
+      className={`committee-photo-card badge-type-${member.badgeType}`}
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.96 }}
+      transition={{ duration: 0.35, delay: (index % 6) * 0.04 }}
+      layout
+    >
+      {/* Photo Frame Container */}
+      <div className="committee-photo-frame">
+        {member.photo && !imgFailed ? (
+          <img
+            src={member.photo}
+            alt={member.name}
+            className="committee-photo-img"
+            loading="lazy"
+            onError={() => setImgFailed(true)}
+          />
+        ) : null}
+
+        {/* Fallback & Photo Placeholder Frame (Ready for images to be attached) */}
+        {(!member.photo || imgFailed) && (
+          <div
+            className="committee-photo-placeholder"
+            aria-label={`Photo placeholder for ${member.name}`}
+          >
+            <div className="placeholder-avatar-bubble">
+              <User size={38} aria-hidden="true" />
+            </div>
+            <div className="placeholder-initials-chip">{member.initials}</div>
+            <span className="placeholder-hint-label">
+              <Camera size={11} aria-hidden="true" /> Photo
+            </span>
+          </div>
+        )}
+
+        {/* Floating Role Badge */}
+        <span className={`committee-role-badge role-${member.badgeType}`}>
+          {member.role}
+        </span>
+      </div>
+
+      {/* Member Info Content */}
+      <div className="committee-card-body">
+        <h3 className="committee-member-name">{member.name}</h3>
+        <p className="committee-member-designation">{member.designation}</p>
+        <div className="committee-member-affil">
+          <Building2 size={13} aria-hidden="true" className="affil-icon" />
+          <span>{member.affiliation}</span>
+        </div>
+      </div>
+    </motion.article>
+  );
+}
+
+export default function CommitteeSection() {
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
+  const filteredMembers =
+    selectedCategory === "all"
+      ? committeeMembers
+      : committeeMembers.filter((m) => m.category === selectedCategory);
+
+  return (
+    <section className="section committee-section-enhanced" id="committee">
       <div className="container">
         <SectionHeading
-          eyebrow="GOVERNANCE &amp; LEADERSHIP"
-          title="Committee"
-          text="AI UNIVERSE–2028 governance structure comprising General Chairs, Technical Programme Committee, Advisory Boards, and Organizing Secretaries."
+          eyebrow="GOVERNANCE & LEADERSHIP"
+          title="Organizing & Technical Committees"
+          text="AI UNIVERSE–2028 leadership roster comprising Patrons, General Chairs, Conveners, Technical Program Committee, Publication & Publicity Chairs, and Steering Committee."
         />
 
-        <div className="committee-cards-grid">
-          {committeeStructure.map((item, idx) => (
-            <motion.article
-              className="committee-card"
-              key={item.title}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: idx * 0.05 }}
-            >
-              <div className="committee-icon">
-                <Users size={19} aria-hidden="true" />
-              </div>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </motion.article>
-          ))}
+        {/* Quick Facts Strip for Committee */}
+        <div className="committee-stats-strip">
+          <div className="committee-stat-pill">
+            <Users size={16} className="stat-pill-icon" aria-hidden="true" />
+            <span>
+              <strong>19</strong> Committee Leaders
+            </span>
+          </div>
+          <div className="committee-stat-pill">
+            <Award size={16} className="stat-pill-icon" aria-hidden="true" />
+            <span>
+              <strong>6</strong> Premier Institutions Represented
+            </span>
+          </div>
+          <div className="committee-stat-pill">
+            <ShieldCheck size={16} className="stat-pill-icon" aria-hidden="true" />
+            <span>
+              <strong>5</strong> Executive Governance Panels
+            </span>
+          </div>
         </div>
 
+        {/* Filter Category Pills */}
+        <div
+          className="committee-filter-bar"
+          role="tablist"
+          aria-label="Filter committee by category"
+        >
+          {committeeCategories.map((cat) => {
+            const isSelected = selectedCategory === cat.id;
+            const count =
+              cat.id === "all"
+                ? committeeMembers.length
+                : committeeMembers.filter((m) => m.category === cat.id).length;
+
+            return (
+              <button
+                key={cat.id}
+                type="button"
+                role="tab"
+                aria-selected={isSelected}
+                className={`committee-filter-pill ${isSelected ? "is-active" : ""}`}
+                onClick={() => setSelectedCategory(cat.id)}
+              >
+                <span>{cat.label}</span>
+                <span className="pill-count-chip">{count}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Photo Cards Grid */}
+        <motion.div className="committee-photo-grid" layout>
+          <AnimatePresence mode="popLayout">
+            {filteredMembers.map((member, idx) => (
+              <CommitteeMemberCard key={member.id} member={member} index={idx} />
+            ))}
+          </AnimatePresence>
+        </motion.div>
+
+        {/* Photo Attachment Info & Call for Papers Banner */}
         <div className="committee-directory-note">
-          <div>
-            <strong>Committee &amp; Keynote Announcements</strong>
+          <div className="note-text-wrap">
+            <strong>Photo Cards Ready for Images</strong>
             <p>
-              Detailed chair appointments, International Advisory rosters, and invited keynote speaker
-              profiles will be announced separately on the official conference portal.
+              Photo cards are configured and ready. Whenever you wish to add photos, place the image files in{" "}
+              <code>public/images/committee/</code> (e.g. <code>satyajit-chakrabarti.jpg</code>, <code>biswajoy-chatterjee.jpg</code>) or update the photo paths in <code>src/data/conference.js</code>.
             </p>
           </div>
-          <a className="btn btn-outline-dark" href="#papers">
+          <a className="btn btn-primary" href="#papers">
             View Call for Papers
           </a>
         </div>
