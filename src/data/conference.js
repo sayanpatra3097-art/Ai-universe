@@ -4,7 +4,7 @@ export const conference = {
   subtitle:
     "Artificial Intelligence for Unified, Next-generation Intelligent & Verified Ecosystems in Research, Security and Engineering",
   format: "International Conference",
-  dates: "26–28 August 2028",
+  dates: "24–28 August 2028",
   venueShort: "Rajasthan International Center, Jaipur",
   venueName: "Rajasthan International Center (RIC)",
   venueAddress:
@@ -16,7 +16,7 @@ export const conference = {
 };
 
 export const announcements = [
-  "AI UNIVERSE–2028 | International Conference · 26–28 August 2028 at Rajasthan International Center, Jaipur.",
+  "AI UNIVERSE–2028 | International Conference · 24–28 August 2028 at Rajasthan International Center, Jaipur.",
   "Paper Submission Opens on 16 April 2028 · Paper Submission Deadline: 10 May 2028.",
   "Acceptance Notification: 26 June 2028 · Registration Opens: 03 July 2028 · Registration Deadline: 25 July 2028.",
   "Four comprehensive technical tracks covering Frontier AI & Agentic Systems, Secure & Trustworthy AI, Autonomous Intelligence & Cyber-Physical Systems, and Intelligent Communication & AI-Native Hardware.",
@@ -53,8 +53,8 @@ export const heroSlides = [
 export const quickFactsStrip = [
   {
     role: "Conference Dates",
-    name: "26–28 August 2028",
-    detail: "Three-Day International Programme"
+    name: "24–28 August 2028",
+    detail: "Five-Day International Programme"
   },
   {
     role: "Conference Venue",
@@ -184,7 +184,7 @@ export const timeline = [
     status: "Upcoming"
   },
   {
-    date: "26–28 August 2028",
+    date: "24–28 August 2028",
     title: "Conference Dates",
     detail: "AI UNIVERSE–2028 hosted at Rajasthan International Center (RIC), Jaipur.",
     status: "Scheduled"

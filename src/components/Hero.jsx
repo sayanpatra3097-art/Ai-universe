@@ -173,7 +173,7 @@ export default function Hero({ onSelectTab }) {
                 <div>
                   <small>CONFERENCE DATES</small>
                   <strong>{conference.dates}</strong>
-                  <span className="meta-sub">Four-Day Summit</span>
+                  <span className="meta-sub">Five-Day Summit</span>
                 </div>
               </div>
 
