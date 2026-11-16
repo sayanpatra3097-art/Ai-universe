@@ -59,22 +59,22 @@ export default function Navbar({ activeTab = "home", onSelectTab }) {
           ═══════════════════════════════════════════════════════════════════ */}
       <div className="header-top-logo-bar">
         <div className="container header-top-inner">
-          {/* Left: Host Institution (UEM Jaipur) Logo */}
-          <div className="header-top-col header-top-left">
+          {/* 1. Host Institution (UEM Jaipur) Logo */}
+          <div className="header-top-item header-top-uem-col">
             <div
               aria-label="University of Engineering & Management (UEM) Jaipur"
               className="header-provided-logo-item"
             >
               <img
-                src="/images/uem-logo.jpg"
+                src="/images/uem-logo.png"
                 alt="University of Engineering & Management (UEM) Jaipur"
                 className="header-top-provided-logo header-top-uem-logo"
               />
             </div>
           </div>
 
-          {/* Middle: AI UNIVERSE Logo & Conference Title */}
-          <div className="header-top-col header-top-center">
+          {/* 2. Conference Title & Brand Identity */}
+          <div className="header-top-item header-top-brand-col">
             <a
               className="brand-mapcon brand-mapcon-center"
               href="#home"
@@ -90,14 +90,18 @@ export default function Navbar({ activeTab = "home", onSelectTab }) {
                 className="brand-logo-img-large"
               />
               <div className="brand-mapcon-titles">
-                <strong className="brand-mapcon-heading">AI UNIVERSE–2028</strong>
+                <img
+                  src="/images/ai-universe-wordmark.png"
+                  alt="AI UNIVERSE 2028"
+                  className="brand-wordmark-img"
+                />
                 <div className="brand-mapcon-date-loc">August 24–26, 2028 | JAIPUR</div>
               </div>
             </a>
           </div>
 
-          {/* Right: IEEE Computer Society Logo & IEEE UEMJ Student Branch Logo */}
-          <div className="header-top-col header-top-right">
+          {/* 3. IEEE Computer Society Logo */}
+          <div className="header-top-item header-top-cs-col">
             <div
               aria-label="IEEE Computer Society UEMJ Student Branch Chapter"
               className="header-provided-logo-item"
@@ -108,6 +112,10 @@ export default function Navbar({ activeTab = "home", onSelectTab }) {
                 className="header-top-provided-logo header-top-cs-logo"
               />
             </div>
+          </div>
+
+          {/* 4. IEEE UEMJ Student Branch Logo */}
+          <div className="header-top-item header-top-sb-col">
             <div
               aria-label="IEEE UEMJ Student Branch"
               className="header-provided-logo-item"
