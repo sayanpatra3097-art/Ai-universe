@@ -91,7 +91,7 @@ export default function Navbar({ activeTab = "home", onSelectTab }) {
               />
               <div className="brand-mapcon-titles">
                 <strong className="brand-mapcon-heading">AI UNIVERSE–2028</strong>
-                <div className="brand-mapcon-date-loc">August 24–28, 2028 | JAIPUR</div>
+                <div className="brand-mapcon-date-loc">August 24–26, 2028 | JAIPUR</div>
               </div>
             </a>
           </div>
