@@ -257,8 +257,7 @@ export const committeeCategories = [
   { id: "patrons", label: "Patrons & General Chairs" },
   { id: "organizing", label: "Organizing & Conveners" },
   { id: "tpc", label: "Technical Program (TPC)" },
-  { id: "publication", label: "Publication & Publicity" },
-  { id: "steering", label: "Steering Committee" }
+  { id: "publication", label: "Publication & Publicity" }
 ];
 
 export const committeeMembers = [
@@ -437,39 +436,6 @@ export const committeeMembers = [
     affiliation: "UEM Jaipur, Rajasthan",
     initials: "SB",
     photo: "/images/committee/santanu-basak.jpg"
-  },
-  {
-    id: "pradeep-kumar-sharma",
-    name: "Prof. (Dr.) Pradeep Kumar Sharma",
-    role: "Steering Committee",
-    badgeType: "steering",
-    category: "steering",
-    designation: "Registrar & Provost, UEM Jaipur",
-    affiliation: "UEM Jaipur, Rajasthan",
-    initials: "PS",
-    photo: "/images/committee/pradeep-kumar-sharma.jpg"
-  },
-  {
-    id: "g-uma-devi",
-    name: "Prof. (Dr.) G. Uma Devi",
-    role: "Steering Committee",
-    badgeType: "steering",
-    category: "steering",
-    designation: "Head of Dept.- CSE & Associate Dean (Engg.), UEM Jaipur",
-    affiliation: "UEM Jaipur, Rajasthan",
-    initials: "UD",
-    photo: "/images/committee/g-uma-devi.jpg"
-  },
-  {
-    id: "tapas-si",
-    name: "Prof. (Dr.) Tapas Si",
-    role: "Steering Committee",
-    badgeType: "steering",
-    category: "steering",
-    designation: "Dept. of CSE & Associate Dean (Research), UEM Jaipur",
-    affiliation: "UEM Jaipur, Rajasthan",
-    initials: "TS",
-    photo: "/images/committee/tapas-si.jpg"
   }
 ];
 
@@ -493,10 +459,5 @@ export const committeeStructure = [
     title: "Publication & Publicity Chairs",
     description:
       "Managing conference proceedings, indexing standards, media relations, and worldwide outreach."
-  },
-  {
-    title: "Steering Committee",
-    description:
-      "University leadership guiding institutional alignment, governance, and research standards."
   }
 ];

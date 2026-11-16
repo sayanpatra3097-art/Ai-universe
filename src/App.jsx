@@ -248,8 +248,8 @@ export default function App() {
                         >
                           <BookOpen size={17} aria-hidden="true" />
                           <div>
-                            <strong>8 Technical Tracks</strong>
-                            <span>AI, Data Science, Cybersecurity, VLSI, Robotics, Bio &amp; Energy</span>
+                            <strong>4 Technical Tracks</strong>
+                            <span>Frontier AI, Trustworthy AI, Autonomous Systems &amp; AI-Native Hardware</span>
                           </div>
                           <ArrowRight size={15} aria-hidden="true" />
                         </button>
@@ -287,7 +287,7 @@ export default function App() {
                     />
                     <p className="lead-paragraph">
                       Submissions to AI UNIVERSE–2028 must present novel work, sound technical content,
-                      and clear research contributions aligned with any of the eight conference tracks.
+                      and clear research contributions aligned with any of the four conference tracks.
                     </p>
                     <p className="body-paragraph">
                       Further details regarding the submission format, publication arrangements,
@@ -386,7 +386,7 @@ export default function App() {
               </li>
               <li>
                 <button type="button" className="footer-link-btn" onClick={() => handleSelectTab("tracks")}>
-                  Technical Tracks (01–08)
+                  Technical Tracks (01–04)
                 </button>
               </li>
               <li>

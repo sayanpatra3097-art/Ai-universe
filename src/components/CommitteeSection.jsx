@@ -85,7 +85,7 @@ export default function CommitteeSection() {
         <SectionHeading
           eyebrow="GOVERNANCE & LEADERSHIP"
           title="Organizing & Technical Committees"
-          text="AI UNIVERSE–2028 leadership roster comprising Patrons, General Chairs, Conveners, Technical Program Committee, Publication & Publicity Chairs, and Steering Committee."
+          text="AI UNIVERSE–2028 leadership roster comprising Patrons, General Chairs, Conveners, Technical Program Committee, and Publication & Publicity Chairs."
         />
 
         {/* Quick Facts Strip for Committee */}
@@ -93,7 +93,7 @@ export default function CommitteeSection() {
           <div className="committee-stat-pill">
             <Users size={16} className="stat-pill-icon" aria-hidden="true" />
             <span>
-              <strong>19</strong> Committee Leaders
+              <strong>{committeeMembers.length}</strong> Committee Leaders
             </span>
           </div>
           <div className="committee-stat-pill">
@@ -105,7 +105,7 @@ export default function CommitteeSection() {
           <div className="committee-stat-pill">
             <ShieldCheck size={16} className="stat-pill-icon" aria-hidden="true" />
             <span>
-              <strong>5</strong> Executive Governance Panels
+              <strong>{committeeCategories.length - 1}</strong> Executive Governance Panels
             </span>
           </div>
         </div>
