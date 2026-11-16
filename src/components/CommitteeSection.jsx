@@ -147,20 +147,6 @@ export default function CommitteeSection() {
             ))}
           </AnimatePresence>
         </motion.div>
-
-        {/* Photo Attachment Info & Call for Papers Banner */}
-        <div className="committee-directory-note">
-          <div className="note-text-wrap">
-            <strong>Photo Cards Ready for Images</strong>
-            <p>
-              Photo cards are configured and ready. Whenever you wish to add photos, place the image files in{" "}
-              <code>public/images/committee/</code> (e.g. <code>satyajit-chakrabarti.jpg</code>, <code>biswajoy-chatterjee.jpg</code>) or update the photo paths in <code>src/data/conference.js</code>.
-            </p>
-          </div>
-          <a className="btn btn-primary" href="#papers">
-            View Call for Papers
-          </a>
-        </div>
       </div>
     </section>
   );

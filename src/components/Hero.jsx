@@ -161,7 +161,7 @@ export default function Hero({ onSelectTab }) {
               <div className="hero-title-glow" aria-hidden="true" />
             </div>
 
-            <div className="hero-conf-lead">IEEE Conference on</div>
+            <div className="hero-conf-lead">IEEE International Conference on</div>
             <p className="hero-subtitle">{conference.subtitle}</p>
 
             {/* Interactive Glass Cards */}
